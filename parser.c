@@ -8204,6 +8204,7 @@ xmlParseStringPEReference(xmlParserCtxtPtr ctxt, const xmlChar **str) {
 	entity = ctxt->sax->getParameterEntity(ctxt->userData, name);
     if (ctxt->instate == XML_PARSER_EOF) {
 	xmlFree(name);
+	*str = ptr;
 	return(NULL);
     }
     if (entity == NULL) {
